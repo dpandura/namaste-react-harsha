@@ -1,9 +1,17 @@
-const heading1 = React.createElement("h1", { id: "heading"}, "Hello World from H1!");
-const heading2 = React.createElement("h2", { id: "heading"}, "Hello World from H2!");
-const child1 = React. createElement("div", {id: "child"},  [heading1, heading2]);
-const child2 = React. createElement("div", {id: "child"},  [heading1, heading2])
-const parent = React.createElement("div", {id: "parent"}, [child1, child2])
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-console.log(parent);
+const TitleComponent = () => <h1 id="heading">Namaste React using JSX</h1>;
+
+const title = <h1 id="heading">Namaste React</h1>;
+
+const HeadingComponent = () => (
+  <div id="container">
+    {title}
+    <TitleComponent></TitleComponent>
+    <h1 id="heading">Namaste React Functional Component</h1>
+  </div>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent); 
+root.render(<HeadingComponent></HeadingComponent>);
